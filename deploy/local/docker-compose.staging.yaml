@@ -1,0 +1,22 @@
+# local staging env
+#
+# this extends the base config in `docker-compose.base.yaml` with settings specific to the local staging env
+# note that separating these settings from the base config is not strictly necessary
+# (since there is only one local env and no 'local prod' env),
+# but is done to mirror the docker-compose configs for staging and prod envs on AWS (see deploy/aws/)
+
+services:
+  backend:
+    environment:
+      MODE: staging
+
+  frontend:
+    build:
+      target: staging
+    secrets:
+      - source: basic-auth-credentials
+        target: .htpasswd
+
+secrets:
+  basic-auth-credentials:
+    file: ./.htpasswd

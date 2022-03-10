@@ -1,0 +1,2 @@
+imaging_well_id,pipeline_well_id,pml_id,platemap_type,parental_line,imaging_round_id,plate_id,site_num,src_filename,dst_filename,src_dirpath,manually_flagged
+G07,G07,PML0256,none,czML0383,R02,P0010,32,MMStack_1328-G7-32.ome.tif,czML0383-P0010-G07-PML0256-S32__MMStack_1328-G7-32.ome.tif,PML0256/raw_data,False

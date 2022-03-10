@@ -1,0 +1,25 @@
+
+.slice-viewer-canvas-container, .volume-viewer-canvas-container {
+    background-color: black;
+    border-radius: 10px;
+    position: relative;
+    canvas {
+        border-radius: 10px;
+        margin: auto;
+        display: block;
+    }
+}
+
+.display-settings-label {
+    font-size: 16px;
+}
+
+.viewer-slider-label {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.viewer-slider-value {
+    font-weight: bold;
+    font-size: 14px;
+}

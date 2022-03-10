@@ -1,0 +1,65 @@
+{
+  "name": "opencell",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config ./webpack.dev.js --progress",
+    "start-in-container": "webpack-dev-server --config ./webpack.dev-in-container.js --progress",
+    "build": "webpack --config ./webpack.prod.js --optimization-minimize --progress"
+  },
+  "keywords": [],
+  "author": "Keith Cheveralls",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.5.0",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.4.3",
+    "sass": "^1.43.3",
+    "sass-loader": "^12.2.0",
+    "tachyons": "^4.12.0",
+    "webpack": "^5.60.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.3.1",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.15.4",
+    "@blueprintjs/core": "^3.51.3",
+    "@blueprintjs/select": "^3.18.10",
+    "chroma-js": "^2.1.2",
+    "cytoscape": "^3.17.2",
+    "cytoscape-cise": "^1.0.0",
+    "cytoscape-cola": "2.4",
+    "cytoscape-cose-bilkent": "^4.1.0",
+    "cytoscape-fcose": "^2.1.0",
+    "cytoscape-node-html-label": "^1.2.2",
+    "d3": "^7.1.1",
+    "d3-scale-chromatic": "^3.0.0",
+    "d3-tip": "^0.9.1",
+    "react": "^16.14.0",
+    "react-cytoscapejs": "^1.2.1",
+    "react-dom": "^16.14.0",
+    "react-ga": "^3.3.0",
+    "react-router-dom": "^5.3.0",
+    "react-table-6": "^6.11.0",
+    "semiotic": "^1.20.6",
+    "three": "^0.133.1"
+  }
+}

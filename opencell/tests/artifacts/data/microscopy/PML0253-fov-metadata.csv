@@ -1,0 +1,7 @@
+parental_line,plate_id,imaging_round_id,imaging_well_id,pipeline_well_id,pml_id,platemap_type,site_num,src_filename,dst_filename,src_dirpath,manually_flagged
+czML0383,P0009,R02,D08,C09,PML0253,custom,11,MMStack_47-D8-11.ome.tif,czML0383-P0009-C09-PML0253-S11__MMStack_47-D8-11.ome.tif,PML0253/raw_data,False
+czML0383,P0009,R02,D08,C09,PML0253,custom,30,MMStack_66-D8-30.ome.tif,czML0383-P0009-C09-PML0253-S30__MMStack_66-D8-30.ome.tif,PML0253/raw_data,False
+czML0383,P0009,R02,D09,F08,PML0253,custom,5,MMStack_5-D9-5.ome.tif,czML0383-P0009-F08-PML0253-S05__MMStack_5-D9-5.ome.tif,PML0253/raw_data,False
+czML0383,P0009,R02,D09,F08,PML0253,custom,6,MMStack_6-D9-6.ome.tif,czML0383-P0009-F08-PML0253-S06__MMStack_6-D9-6.ome.tif,PML0253/raw_data,False
+czML0383,P0009,R02,D09,F08,PML0253,custom,28,MMStack_28-D9-28.ome.tif,czML0383-P0009-F08-PML0253-S28__MMStack_28-D9-28.ome.tif,PML0253/raw_data,False
+czML0383,P0009,R02,D09,F08,PML0253,custom,31,MMStack_31-D9-31.ome.tif,czML0383-P0009-F08-PML0253-S31__MMStack_31-D9-31.ome.tif,PML0253/raw_data,False

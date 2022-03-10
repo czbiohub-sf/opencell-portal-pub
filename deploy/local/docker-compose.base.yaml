@@ -1,0 +1,69 @@
+# Base config for local envs
+# This config is extended by `docker-compose.staging.yaml` config to yield the staging config
+
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:13-alpine
+    container_name: opencell-staging-db
+    environment:
+      POSTGRES_DB: opencelldb
+      POSTGRES_USER: opencell
+      POSTGRES_PASSWORD: password
+    networks:
+      - opencell-staging
+    volumes:
+      - db-data:/var/lib/postgresql/data
+      - ~/opencelldb-dumps:/home/dumps:ro
+    restart: always
+
+  backend:
+    build:
+      context: ../../
+      dockerfile: deploy/local/backend.Dockerfile
+    container_name: opencell-staging-backend
+    networks:
+      - opencell-staging
+    secrets:
+      - source: db-credentials
+        target: db-credentials.json
+    restart: always
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+    container_name: opencell-staging-redis
+    networks:
+      - opencell-staging
+
+  frontend:
+    build:
+      context: ../../
+      dockerfile: deploy/local/nginx.Dockerfile
+    container_name: opencell-staging-frontend
+    networks:
+      - opencell-staging
+    ports:
+      - 80:80
+    # to populate the /ML_group directory (to which nginx aliases requests to the /data endpoint),
+    # we can either mount a local copy of the public prod data (copied from s3://opencell):
+    # `~/opencell-prod-data:/ML_group:ro`
+    # or we can mount the ml_group ESS partition itself (this is the real prod data):
+    # `/Volumes/ml_group:/ML_group:ro`
+    volumes:
+      - ~/nginx/log:/var/log/nginx:rw
+      - ~/opencell-prod-data:/ML_group:ro
+    restart: always
+
+volumes:
+  db-data: {}
+
+networks:
+  opencell-staging: {}
+
+secrets:
+  db-credentials:
+    file: ./db-credentials.json
